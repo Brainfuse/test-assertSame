@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.1//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.5.1/distro-source/core/src/gwt-module.dtd">
+<module rename-to='TestGwt'>
+	<inherits name="com.google.gwt.user.User" />
+	<add-linker name="xsiframe" />
+
+	<set-configuration-property name="devModeRedirectEnabled"
+		value="true" />
+	<set-configuration-property name="mgwt.superdevmode" value="on" />
+	<!-- <replace-with
+		class="com.brainfuse.graphics.client.widget.Carousel.CarouselImplGecko">
+		<when-type-is
+			class="com.brainfuse.graphics.client.widget.Carousel.CarouselImpl" />
+		<all>
+			<when-property-is name="user.agent" value="gecko1_8" />
+		</all>
+	</replace-with> -->
+	<replace-with
+		class="com.brainfuse.gwt.test.client.ClassOne">
+		<when-type-is
+			class="com.brainfuse.gwt.test.client.TestInterface" />
+	</replace-with>
+	<entry-point class="com.brainfuse.gwt.test.client.TestGwtEntryPoint" />
+	<source path="client" />
+</module>
