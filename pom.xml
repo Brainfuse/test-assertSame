@@ -44,9 +44,18 @@
 						</goals>
 
 					</execution>
-					<!-- <execution> <id>test</id> <configuration> <includes>**/*GwtTest*.java</includes> 
-						<extraJvmArgs>-Xmx3G -Xss1024k</extraJvmArgs> <productionMode>true</productionMode> 
-						</configuration> <goals> <goal>test</goal> </goals> </execution> -->
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<configuration>
+							<includes>**/*GwtTest*.java</includes>
+							<extraJvmArgs>-Xmx3G -Xss1024k -ea</extraJvmArgs>
+							<productionMode>true</productionMode>
+						</configuration>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
 				</executions>
 
 				<dependencies>
@@ -102,6 +111,8 @@
 						</goals>
 						<phase>test</phase>
 						<configuration>
+							<argLine>-ea</argLine>
+							<enableAssertions>true</enableAssertions>
 							<includes>
 								<include>**/*GwtTest*.java</include>
 							</includes>
